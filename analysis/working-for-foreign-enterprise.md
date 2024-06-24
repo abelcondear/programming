@@ -14,7 +14,8 @@ Por otra parte, países de la Unión Europea o EEUU tiene su propia moneda, la c
 Es decir, si fuera Euros convertidos en ARS entonces habría que calcular el valor de la hora perteneciente a un día de jornada laboral perteneciente a un sueldo anual.
 
 Tanto en EEUU o la Unión Europea se utiliza como referencia el sueldo anual.
-La razón por la cual no hay resultado aún en la búsqueda en el exterior es porque
+
+La razón por la cual la búsqueda de empleo en el exterior no arroja resultados optimistas es porque
 no hay aparentemente una buena relación entre países de habla hispana con países de habla no hispana.
 
 La empresa o empleador extranjero requiere que el candidato sobresalte mucho del resto de los candidatos hispanos y para ello debe ser demostrado antes de concretar la primera entrevista.
