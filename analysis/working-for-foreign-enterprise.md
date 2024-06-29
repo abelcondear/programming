@@ -9,12 +9,12 @@ The foreign country needs that the candidate accomplishes the following requirem
 - Someone who understands about complex projects
 - Someone who goes along with the team mates
 
-On the other side, United States and countries from Europe has its own currency and this currency could vary from the local currency candidate.
+On the other side, United States and countries from Europe carries its own currency and this currency could vary from the local currency candidate.
 
-If the EURO would be converted into ARS then we should calculate the hour value that belongs to one working day and this belongs to an annual salary.
+If the EURO currency would be converted into ARS then we should calculate the hour value that belongs to a working day and also, this belongs to an annual salary.
 
-Annual salary is used as reference in United States and Europe. 
+Annual salary is used as measure salary reference in United States and Europe. 
 
-The reason why the research for a job in a foreign country is not successful, it is because there is not a good relationship among Hispanic spoken countries and non-Hispanic spoken countries.
+The reason why the research for a job in a foreign country is not successful at times, it is because there is not a good relationship among Hispanic spoken countries and non-Hispanic spoken countries.
 
-The foreign employer requires that the candidate might highlight his/her skills over the others one and it should be shown before having the first interview.
+The foreign employer requires that the candidate might highlight his/her skills over the other ones and it should be shown before having the first interview.
