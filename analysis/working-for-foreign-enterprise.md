@@ -1,22 +1,20 @@
-## Relación entre empleador extranjero y candidato
+## Relationship between employer and the candidate
 
-El país extranjero necesita que el candidato cumpla con los siguientes requerimientos.
+The foreign country needs that the candidate accomplishes the following requirements:
 
-- Alguien que hable con mucha fluidez su idioma
-- Alguien que pueda acoplarse 100% a su zona horaria
-- Alguien que entienda la cultura o forma de vivir del país extranjero
-- Alguien que tenga experiencia trabajando con otras culturas o países extranjeros
-- Alguien que entienda de proyectos o trabajos complejos
-- Alguien que no tenga diferencias con los integrantes del equipo a nivel de entendimiento. Es decir que sea alguien más del equipo, aún trabajando en otro sitio o país.
+- Someone who talks the language very fluently
+- Someone who can work along the same time zone that the employer needs
+- Someone who understands the culture from the foreign country
+- Someone who is experienced in working with foreign countries
+- Someone who understands about complex projects
+- Someone who goes along with the team mates
 
-Por otra parte, países de la Unión Europea o EEUU tiene su propia moneda, la cual podría variar un poco en comparación con la moneda local del candidato.
+On the other side, United States and countries from Europe has its own currency and this currency could vary from the local currency candidate.
 
-Es decir, si fuera Euros convertidos en ARS entonces habría que calcular el valor de la hora perteneciente a un día de jornada laboral perteneciente a un sueldo anual.
+If the EURO would be converted into ARS then we should calculate the hour value that belongs to one working day and this belongs to an annual salary.
 
-Tanto en EEUU o la Unión Europea se utiliza como referencia el sueldo anual.
+Annual salary is used as reference in United States and Europe. 
 
-La razón por la cual la búsqueda de empleo en el exterior no arroja resultados optimistas es porque
-no hay aparentemente una buena relación entre países de habla hispana con países de habla no hispana.
+The reason why the research for a job in a foreign country is not successful, it is because there is not a good relationship among Hispanic spoken countries and non-Hispanic spoken countries.
 
-La empresa o empleador extranjero requiere que el candidato sobresalte mucho del resto de los candidatos hispanos y para ello debe ser demostrado antes de concretar la primera entrevista.
-
+The foreign employer requires that the candidate might highlight his/her skills over the others one and it should be shown before having the first interview.
