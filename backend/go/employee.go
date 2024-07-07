@@ -22,13 +22,13 @@ type Employee struct {
 }
 
 func (e *Employee)Quit() {
-	e.timeEnd = time.Now() // the variable type is defined in execution time
+	e.timeEnd = time.Now().Local().Add(time.Hour * time.Duration(8) + time.Minute * time.Duration(0) + time.Second * time.Duration(0)) // the variable type is defined in execution time
 	
 	fmt.Println(e.timeStart)
 	fmt.Println(e.timeEnd)
 
 	difference := e.timeEnd.Sub(e.timeStart)
-	fmt.Println(difference)
+	//fmt.Println(difference)
 
 	e.HoursWorked = difference.Hours()
 	return
@@ -51,5 +51,5 @@ func main() {
 
 	fmt.Printf("Employee Name: %s\n", newEmp.Name)
 	fmt.Printf("Employee Age: %.2d\n", newEmp.Age)
-	fmt.Printf("Hours worked: %.2f\n", newEmp.HoursWorked)	
+	fmt.Printf("Hours Worked: %.2f\n", newEmp.HoursWorked)	
 }
