@@ -1,11 +1,9 @@
 package main
 
-
-
 import (
 	"fmt"
-	//"math"
 	"time"
+	"math/rand"
  )
 
 type Employee struct {
@@ -22,7 +20,7 @@ type Employee struct {
 }
 
 func (e *Employee)Quit() {
-	e.timeEnd = time.Now().Local().Add(time.Hour * time.Duration(8) + time.Minute * time.Duration(0) + time.Second * time.Duration(0)) // the variable type is defined in execution time
+	e.timeEnd = time.Now().Local().Add(time.Hour * time.Duration(rand.Intn(12-6) + 6) + time.Minute * time.Duration(0) + time.Second * time.Duration(0)) // the variable type is defined in execution time
 	
 	fmt.Println(e.timeStart)
 	fmt.Println(e.timeEnd)
