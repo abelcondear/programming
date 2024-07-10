@@ -6,7 +6,7 @@ type WorkingHours struct {
     Long    float64
 }
 
-func GetWorkingHours() *WorkingHours{
+func Get() *WorkingHours{
     var w = new(WorkingHours)
     w.Normal = 8.0
     w.Short = 4.0

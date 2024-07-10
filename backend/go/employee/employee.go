@@ -51,9 +51,9 @@ func main() {
 	newEmp.Quit()
 
 	newEmp.Name = "John Mann"
-	newEmp.Age = 34
+	newEmp.Age = 37
 
-	var workingHours = workinghours.GetWorkingHours()
+	var workingHours = workinghours.Get()
 	newEmp.ExtraHoursWorked =  math.Abs(workingHours.Normal - newEmp.HoursWorked)
 
 	fmt.Printf("Employee Name: %s\n", newEmp.Name)
