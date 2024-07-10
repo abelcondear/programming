@@ -27,7 +27,12 @@ func (e *Employee)rangeRand(max int, min int) int {
 }
 
 func (e *Employee)Quit() {
-	e.timeEnd = time.Now().Local().Add(time.Hour * time.Duration(e.rangeRand(14,6)) + time.Minute * time.Duration(0) + time.Second * time.Duration(0)) // the variable type is defined in execution time
+	e.timeEnd = time.Now().Local().Add(time.Hour * 
+		time.Duration(e.rangeRand(14,6)) + 
+		time.Minute * 
+		time.Duration(0) + 
+		time.Second * 
+		time.Duration(0)) // the variable type is defined in execution time
 	
 	//fmt.Println(e.timeStart)
 	//fmt.Println(e.timeEnd)
@@ -51,7 +56,7 @@ func main() {
 	newEmp.Quit()
 
 	newEmp.Name = "John Mann"
-	newEmp.Age = 37
+	newEmp.Age = 39
 
 	var workingHours = workinghours.Get()
 	newEmp.ExtraHoursWorked =  math.Abs(workingHours.Normal - newEmp.HoursWorked)
