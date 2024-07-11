@@ -73,7 +73,7 @@ func addEmployee(addEmployeeFunc *sync.Mutex) {
 
 	addEmployeeFunc.Lock()
 
-	listEmp := list.New()	
+	listEmp = list.New()	
 	var newEmp Employee
 
 	newEmp.Start()
@@ -131,7 +131,7 @@ func addShift(addShiftFunc *sync.Mutex) {
 
 	addShiftFunc.Lock()
 	
-	listShift := list.New()
+	listShift = list.New()
 	var newShift Shift
 
 	newShift.Name = "Full Time" 
@@ -184,7 +184,7 @@ func addContract(addContractFunc *sync.Mutex) {
 
 	addContractFunc.Lock()
 
-	listContract := list.New()
+	listContract = list.New()
 	var newContract Contract
 
 	newContract.Name = "Contract - 6 Months"
