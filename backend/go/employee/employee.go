@@ -5,8 +5,10 @@ import (
 	"time"
 	"math/rand"
 	"math"
+	"bufio"
 	"extra/workinghours"
 	"container/list"
+	"os"
 	"sync"
 )
 
@@ -15,6 +17,7 @@ var wg sync.WaitGroup
 var listEmp *list.List
 var listShift *list.List
 var listContract *list.List
+var countCall int = 0
 
 type Shift struct {
 	Name        string //capital letter : public member
@@ -66,6 +69,103 @@ func (e *Employee)Quit() {
 func (e *Employee)Start() {
 	e.timeStart = time.Now() // the variable type is defined in execution time	
 	return
+}
+
+func PrintMenu()  {
+
+	fmt.Printf("Enter option:")
+
+	option := getInput()
+
+	if  option == "1" { PrintNewEmployee() }
+	if  option == "2" { PrintUpdateEmployee() }
+	if  option == "3" { PrintDeleteEmployee() }
+	if  option == "5" { PrintListEmployee() }
+	if  option == "4" { os.Exit(0) }
+
+}
+
+
+func PrintListEmployee() {
+
+	for e := listEmp.Front(); e != nil; e = e.Next() {
+		i := e.Value
+		switch v := i.(type) {
+		case Employee:
+			fmt.Printf("New Name: %s\n", v.Name)
+		}
+	}
+
+	fmt.Printf("\n\n")
+	PrintMenu()
+	
+}
+
+func PrintNewEmployee() {
+	var text string
+	var input string
+
+	input = ""
+
+	fmt.Printf("Name:")
+	scanner := bufio.NewScanner(os.Stdin)
+
+	for scanner.Scan() {
+		text = scanner.Text()
+		if text != "" { 
+			input = text 
+			break
+		}
+		if text == "" {
+			break
+		}
+	}
+
+	var newEmp Employee
+
+	newEmp.Name = input
+	
+	listEmp.PushBack(newEmp)
+
+	countCall += 1
+
+	if countCall == 4 {
+		fmt.Printf("\n\n")
+		PrintMenu()
+	} else {
+		fmt.Printf("\n\n")
+		PrintNewEmployee()
+	}
+
+}
+
+func PrintUpdateEmployee() {
+	os.Exit(0)
+}
+
+func PrintDeleteEmployee() {
+	os.Exit(0)
+}
+
+func getInput() string {
+	var text string
+	var data string
+
+	scanner := bufio.NewScanner(os.Stdin)
+
+	for scanner.Scan() {
+		text = scanner.Text()
+		if text != "" { 
+			data = text 
+			break
+		}
+
+		if text == "" {
+			break
+		}
+	}
+			
+	return data
 }
 
 func addEmployee(addEmployeeFunc *sync.Mutex) {
@@ -222,6 +322,8 @@ func addContract(addContractFunc *sync.Mutex) {
 } 
 
 func main() {	
+	
+	// uncomment this in case you need to see the shift/contract/employee list
 	wg.Add(3)
 
 	addEmployeeFunc := &sync.Mutex{}
@@ -233,4 +335,9 @@ func main() {
 	go addEmployee(addEmployeeFunc)
 	
 	wg.Wait()
+
+	
+
+	//PrintMenu()
+
 }
