@@ -73,6 +73,12 @@ func (e *Employee)Start() {
 
 func PrintMenu()  {
 
+	fmt.Printf("\n\n")
+	fmt.Printf("1. New Empployee\n")
+	fmt.Printf("2. Update Employee\n")
+	fmt.Printf("3. Delete Employee\n")
+	fmt.Printf("4. List\n")
+	fmt.Printf("5. Exit\n")
 	fmt.Printf("Enter option:")
 
 	option := getInput()
@@ -87,6 +93,7 @@ func PrintMenu()  {
 
 
 func PrintListEmployee() {
+	fmt.Printf("\n\n")
 
 	for e := listEmp.Front(); e != nil; e = e.Next() {
 		i := e.Value
@@ -96,7 +103,6 @@ func PrintListEmployee() {
 		}
 	}
 
-	fmt.Printf("\n\n")
 	PrintMenu()
 	
 }
@@ -105,6 +111,7 @@ func PrintNewEmployee() {
 	var text string
 	var input string
 
+	fmt.Printf("\n\n")
 	input = ""
 
 	fmt.Printf("Name:")
@@ -130,21 +137,21 @@ func PrintNewEmployee() {
 	countCall += 1
 
 	if countCall == 4 {
-		fmt.Printf("\n\n")
 		PrintMenu()
-	} else {
-		fmt.Printf("\n\n")
+	} else {		
 		PrintNewEmployee()
 	}
 
 }
 
 func PrintUpdateEmployee() {
-	os.Exit(0)
+	PrintMenu()
+	//os.Exit(0)
 }
 
 func PrintDeleteEmployee() {
-	os.Exit(0)
+	PrintMenu()
+	//os.Exit(0)
 }
 
 func getInput() string {
