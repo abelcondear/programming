@@ -79,9 +79,9 @@ func PrintMenu()  {
 
 	if  option == "1" { PrintNewEmployee() }
 	if  option == "2" { PrintUpdateEmployee() }
-	if  option == "3" { PrintDeleteEmployee() }
-	if  option == "5" { PrintListEmployee() }
-	if  option == "4" { os.Exit(0) }
+	if  option == "3" { PrintDeleteEmployee() }	
+	if  option == "4" { PrintListEmployee() }
+	if  option == "5" { os.Exit(0) }	
 
 }
 
@@ -324,20 +324,20 @@ func addContract(addContractFunc *sync.Mutex) {
 func main() {	
 	
 	// uncomment this in case you need to see the shift/contract/employee list
-	wg.Add(3)
+	//wg.Add(3)
 
-	addEmployeeFunc := &sync.Mutex{}
-	addShiftFunc := &sync.Mutex{}
-	addContractFunc := &sync.Mutex{}
+	//addEmployeeFunc := &sync.Mutex{}
+	//addShiftFunc := &sync.Mutex{}
+	//addContractFunc := &sync.Mutex{}
 
-	go addShift(addShiftFunc)
-	go addContract(addContractFunc)
-	go addEmployee(addEmployeeFunc)
+	//go addShift(addShiftFunc)
+	//go addContract(addContractFunc)
+	//go addEmployee(addEmployeeFunc)
 	
-	wg.Wait()
+	//wg.Wait()
 
 	
-
-	//PrintMenu()
+	listEmp = list.New()
+	PrintMenu()
 
 }
