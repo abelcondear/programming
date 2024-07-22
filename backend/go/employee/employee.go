@@ -9,7 +9,10 @@ import (
 	"extra/workinghours"
 	"container/list"
 	"os"
+	"os/exec"
+    "runtime"	
 	"sync"
+	ss "strings"
 )
 
 var wg sync.WaitGroup
@@ -17,7 +20,8 @@ var wg sync.WaitGroup
 var listEmp *list.List
 var listShift *list.List
 var listContract *list.List
-var countCall int = 0
+var callPrintNewEmployee int = 0
+var clear map[string]func() //create a map for storing clear funcs
 
 type Shift struct {
 	Name        string //capital letter : public member
@@ -71,7 +75,18 @@ func (e *Employee)Start() {
 	return
 }
 
+func CallClear() {
+    value, ok := clear[runtime.GOOS] //runtime.GOOS -> linux, windows, darwin etc.
+    if ok { //if we defined a clear func for that platform:
+        value()  //we execute it
+    } else { //unsupported platform
+        panic("Your platform is unsupported! I can't clear terminal screen :(")
+    }
+}
+
 func PrintMenu()  {
+
+	CallClear()
 
 	fmt.Printf("\n\n")
 	fmt.Printf("1. New Empployee\n")
@@ -99,9 +114,14 @@ func PrintListEmployee() {
 		i := e.Value
 		switch v := i.(type) {
 		case Employee:
-			fmt.Printf("New Name: %s\n", v.Name)
+			fmt.Printf("Name: %s\n", v.Name)
 		}
 	}
+
+	fmt.Printf("Press Enter to exit.")
+	getInput()
+
+	CallClear()
 
 	PrintMenu()
 	
@@ -111,8 +131,10 @@ func PrintNewEmployee() {
 	var text string
 	var input string
 
-	fmt.Printf("\n\n")
+	//fmt.Printf("\n\n")
 	input = ""
+
+	if callPrintNewEmployee == 0 { fmt.Printf("\n") }
 
 	fmt.Printf("Name:")
 	scanner := bufio.NewScanner(os.Stdin)
@@ -134,9 +156,9 @@ func PrintNewEmployee() {
 	
 	listEmp.PushBack(newEmp)
 
-	countCall += 1
+	callPrintNewEmployee += 1
 
-	if countCall == 4 {
+	if callPrintNewEmployee == 4 {
 		PrintMenu()
 	} else {		
 		PrintNewEmployee()
@@ -145,11 +167,95 @@ func PrintNewEmployee() {
 }
 
 func PrintUpdateEmployee() {
+
+	fmt.Printf("\n\n")
+
+
+	for e := listEmp.Front(); e != nil; e = e.Next() {
+		i := e.Value
+		switch v := i.(type) {
+		case Employee:
+			fmt.Printf("Name: %s\n", v.Name)
+		}
+	}
+	
+	fmt.Printf("Enter Name you wish to update:")
+
+	option := getInput()
+
+	for e := listEmp.Front(); e != nil; e = e.Next() {
+		i := e.Value
+		switch v := i.(type) {
+		case Employee:
+
+			if ss.Contains(v.Name, option) {
+				fmt.Printf("Are you sure you want to update \"%s\"? (Y/N) ", v.Name)
+				option := getInput()
+				
+				if option == "Y" { 
+					listEmp.Remove(e)
+
+
+					fmt.Printf("Name: ")
+					name := getInput()
+
+					var newEmp Employee
+
+					newEmp.Name = name
+
+					listEmp.PushBack(newEmp)
+					fmt.Printf("\"%s\" was updated. Updated Name: %s\n", v.Name, newEmp.Name) 
+
+					fmt.Printf("Press Enter to exit.")
+					getInput()
+					CallClear()
+				}
+			}
+
+		}
+	}	
+	
+	
 	PrintMenu()
 	//os.Exit(0)
 }
 
 func PrintDeleteEmployee() {
+
+	for e := listEmp.Front(); e != nil; e = e.Next() {
+		i := e.Value
+		switch v := i.(type) {
+		case Employee:
+			fmt.Printf("Name: %s\n", v.Name)
+		}
+	}
+	
+	fmt.Printf("Enter Name you wish to delete:")
+
+	option := getInput()
+
+	for e := listEmp.Front(); e != nil; e = e.Next() {
+		i := e.Value
+		switch v := i.(type) {
+		case Employee:
+
+			if ss.Contains(v.Name, option) {
+				fmt.Printf("Are you sure you want to delete \"%s\"? (Y/N) ", v.Name)
+				option := getInput()
+				
+				if option == "Y" { 
+					listEmp.Remove(e)
+					fmt.Printf("\"%s\" was deleted\n", v.Name) 
+					
+					fmt.Printf("Press Enter to exit.")
+					getInput()
+					CallClear()					
+				}
+			}
+
+		}
+	}	
+
 	PrintMenu()
 	//os.Exit(0)
 }
@@ -327,6 +433,20 @@ func addContract(addContractFunc *sync.Mutex) {
 
 	addContractFunc.Unlock()
 } 
+
+func init() {
+    clear = make(map[string]func()) //Initialize it
+    clear["linux"] = func() { 
+        cmd := exec.Command("clear") //Linux example, its tested
+        cmd.Stdout = os.Stdout
+        cmd.Run()
+    }
+    clear["windows"] = func() {
+        cmd := exec.Command("cmd", "/c", "cls") //Windows example, its tested 
+        cmd.Stdout = os.Stdout
+        cmd.Run()
+    }
+}
 
 func main() {	
 	
