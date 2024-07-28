@@ -44,23 +44,29 @@ def main():
     # task: reverse the order of alphabetic 
     # characters without moving the non-alphabetic 
     # characters
+    print("premise: reverse the order of alphabetic")
+    print("characters without moving the non-alphabetic")
+    print("characters")
+    print("")
+    print("Reversing string ...")
     
+    print("")
     print("----------")
     
     input = "#$.%"
     output = reverse(input)
-      
-    print(input)
-    print(output)
-    
+          
+    print(f"Input: {input}")
+    print(f"Output: {output}")
+
     print("----------")    
     print("")
 
     input = "abcde"
     output = reverse(input)
     
-    print(input)
-    print(output)
+    print(f"Input: {input}")
+    print(f"Output: {output}")
     
     print("----------")   
     print("")
@@ -68,8 +74,8 @@ def main():
     input = "ab.c"
     output = reverse(input)
 
-    print(input)
-    print(output)
+    print(f"Input: {input}")
+    print(f"Output: {output}")
 
     print("----------")
     print("")
@@ -77,8 +83,8 @@ def main():
     input = "#$ab.c%d"
     output = reverse(input)
     
-    print(input)
-    print(output)
+    print(f"Input: {input}")
+    print(f"Output: {output}")
 
     print("----------")
 
