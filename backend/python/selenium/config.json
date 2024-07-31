@@ -1,0 +1,7 @@
+{
+    "email" : "************************",
+    "password" : "********",
+    "keywords" : "******",
+    "location" : "Buenos Aires",
+    "driver_path" : ".\\chromedriver-win64\\chromedriver.exe"
+}
