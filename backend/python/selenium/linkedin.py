@@ -28,29 +28,57 @@ class EasyApplyLinkedin:
         login_pass.send_keys(Keys.RETURN)
     
     def job_search(self):
-        jobs_link = self.driver.find_element(By.LINK_TEXT,'Jobs')
+        jobs_link = self.driver.find_element(By.XPATH,'//span[@title="Jobs"]')        
         jobs_link.click()
 
-        search_keywords = self.driver.find_element(By.CSS_SELECTOR,".search-global-typeahead__input[aria-label='Search']")
+        time.sleep(10)
+
+        search_keywords = None
+        search_location = None
+
+        for input_element in self.driver.find_elements(By.XPATH,'//input'):
+            id = input_element.get_property('id')
+            
+            if id.find('search-box-keyword') != -1:
+                search_keywords = input_element
+
+            if id.find("search-box-location") != -1:
+                search_location = input_element
+
+            if search_keywords and search_location:             
+                break
+
         search_keywords.clear()
         search_keywords.send_keys(self.keywords)
+        time.sleep(1)
+
+        search_location.clear()
+        search_location.send_keys(self.location)
+        search_location.send_keys(Keys.RETURN)
+        time.sleep(1)
 
 
     def filter(self):
-        #all_filters_button = self.driver.find_element(By.CSS_SELECTOR,".search-reusables__all-filters-pill-button")                                                   
-        all_filters_button = self.driver.find_element(By.XPATH,"//button[@id=""ember769""]")
+        all_filters_button = None
+        easy_apply_button = None
+
+        for button_element in self.driver.find_elements(By.XPATH,'//button'):
+            value = button_element.text
+            
+            if value.strip() == 'Easy Apply':
+                all_filters_button = button_element
+
+            if value.strip() == 'All filters':
+                easy_apply_button = button_element
+
+            if all_filters_button and easy_apply_button:             
+                break
+
         all_filters_button.click()
         time.sleep(1)
-
-        easy_apply_button = self.driver.find_element(By.XPATH,"//button[@id=""ember794""]")
+        
         easy_apply_button.click()
         time.sleep(1)
-
-    def find_offers(self):
-        total_results = self.driver.find_element(By.CLASS_NAME,"display-flex.t-12.t-black--light.t-normal div span")
-        total_results_int = int(total_results.text.split(' ',1)[0].replace(",",""))
-        print(total_results_int)
-        time.sleep(2)
 
     def close_session(self):
         print('End of the session.')
@@ -58,14 +86,16 @@ class EasyApplyLinkedin:
 
     def apply(self):
         self.driver.maximize_window()
+        
         self.login_linkedin()
         time.sleep(5)
+        
         self.job_search()
         time.sleep(5)
-        #self.filter()
-        #time.sleep(2)
-        #self.find_offers()
-        #time.sleep(2)
+        
+        self.filter()
+        time.sleep(5)
+        
         self.close_session()
 
 
