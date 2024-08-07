@@ -1,5 +1,7 @@
 ## How to avoid memory lake
 
+In order to solve this current issue, we should keep in mind the following.
+
 - We need to know who much data storage we are going to consume. Then we should review every function or procedure or code block, which does not overpass that storage already fixed.
 
 - We can create dynamic memory to be used, However, a problem can arise if we do not properly pay attention at how to manage and free that memory along the execution program.
