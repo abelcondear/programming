@@ -1,4 +1,4 @@
-##How to avoid memory lake
+## How to avoid memory lake
 
 - We need to know who much data storage we are going to consume. Then we should review every function or procedure or code block, which does not overpass that storage already fixed.
 
