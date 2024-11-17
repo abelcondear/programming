@@ -13,7 +13,7 @@ from pyspark.conf import SparkConf
 from pyspark.sql import SparkSession
 
 sc = SparkContext('local[*]')
-time.sleep(5) ##needs time to create context before creating session
+time.sleep(5) #needs time to create context before creating session
 
 spark = (
     SparkSession
@@ -129,17 +129,19 @@ for row in rows_202106:
 
 print("\n\n")
 
+# save data into single dataframe (on the fly)
 l_df = []
 for row in rows_202106:
     df=spark.sql(f"SELECT '{row[0]}' ,'{row[1]}' ,'{row[2]}' ,'{row[3]}'")
     l_df.append(df)
 
+# print out dataframes
 for df in l_df:
     print(df)
 
 print("\n\n")
 
-#Terminal output sample
+# terminal output sample
 """
 Exercise\Output:
 worked_date|employee_id|delete_flag|hours_worked
