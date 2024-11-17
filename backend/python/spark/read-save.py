@@ -129,7 +129,7 @@ for row in rows_202106:
 
 print("\n\n")
 
-# save data into single dataframe (on the fly)
+# save data into single dataframes (on the fly)
 l_df = []
 for row in rows_202106:
     df=spark.sql(f"SELECT '{row[0]}' ,'{row[1]}' ,'{row[2]}' ,'{row[3]}'")
