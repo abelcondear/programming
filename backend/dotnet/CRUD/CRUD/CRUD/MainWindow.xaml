@@ -1,0 +1,17 @@
+﻿<Window x:Name="WndMain" x:Class="MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CRUD"
+        mc:Ignorable="d"
+        Title="CRUD [ Entity Framework + SQL Server ]" Height="369.819" Width="496.04" MinWidth="530.015" MinHeight="421.267">
+    <Grid Margin="0,0,15,25">
+        <Button x:Name="CmdSale" Content="Sale" HorizontalAlignment="Left" Height="77" Margin="124,34,0,0" VerticalAlignment="Top" Width="94"/>
+        <Button x:Name="CmdFind" Content="Find" HorizontalAlignment="Left" Height="77" Margin="124,140,0,0" VerticalAlignment="Top" Width="94"/>
+        <Button x:Name="CmdFindProduct" Content="Find Product" HorizontalAlignment="Left" Height="77" Margin="124,244,0,0" VerticalAlignment="Top" Width="94"/>
+        <Button x:Name="CmdSalePlusRemove" Content="New Sale and Remove" HorizontalAlignment="Left" Height="77" Margin="261,34,-46,0" VerticalAlignment="Top" Width="137"/>
+        <Button x:Name="CmdFindV2" Content="Find -Version II" HorizontalAlignment="Left" Height="77" Margin="261,140,-46,0" VerticalAlignment="Top" Width="137"/>
+
+    </Grid>
+</Window>
