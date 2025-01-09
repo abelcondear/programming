@@ -1,4 +1,14 @@
-﻿namespace Program
+﻿// ********* *********** ***********
+//
+// From a text - string sentence, inverse all words 
+// with even number of characters, remove duplicate
+// words with an uneven number of characters and return
+// as fast as possible the length-sorted words 
+// as a new string sentence.
+// 
+// **********************************
+
+namespace Program
 {
     public class Reverse
     {
@@ -17,7 +27,6 @@
         public static void Execute()
         {
             string str = "hello world from maria Jupiter! hello hello tomorrow hello yes hello good maria";
-            //string str = "hello world hello";
             string[] words = str.Split(" ");
 
             dword d;
@@ -25,7 +34,7 @@
             List<dword> wordsx = new List<dword>();
             List<dword> wordsi = new List<dword>();
 
-            int order = 0; //indicate words order from original sentence
+            int order = 0; //indicate words order from original sentence (or string "str")
 
             //iterating through words
             foreach (string w in words)
@@ -127,7 +136,7 @@
             Console.WriteLine("new string sorted length: {0}", new_str.Length);
 
             Console.Read(); //make pause before quitting the program
-            Environment.Exit(0);
+            Environment.Exit(0); //exit application
         }
     }
 }
