@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user2023\\Documents\\Me\\Programs\\backend\\c\\parenthesis\\bin\\bin.fsproj": {}
+    "C:\\Users\\user2023\\Documents\\Me\\Download\\new\\programming\\backend\\f#\\parenthesis\\bin\\bin.fsproj": {}
   },
   "projects": {
-    "C:\\Users\\user2023\\Documents\\Me\\Programs\\backend\\c\\parenthesis\\bin\\bin.fsproj": {
+    "C:\\Users\\user2023\\Documents\\Me\\Download\\new\\programming\\backend\\f#\\parenthesis\\bin\\bin.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user2023\\Documents\\Me\\Programs\\backend\\c\\parenthesis\\bin\\bin.fsproj",
+        "projectUniqueName": "C:\\Users\\user2023\\Documents\\Me\\Download\\new\\programming\\backend\\f#\\parenthesis\\bin\\bin.fsproj",
         "projectName": "bin",
-        "projectPath": "C:\\Users\\user2023\\Documents\\Me\\Programs\\backend\\c\\parenthesis\\bin\\bin.fsproj",
+        "projectPath": "C:\\Users\\user2023\\Documents\\Me\\Download\\new\\programming\\backend\\f#\\parenthesis\\bin\\bin.fsproj",
         "packagesPath": "C:\\Users\\user2023\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user2023\\Documents\\Me\\Programs\\backend\\c\\parenthesis\\bin\\obj\\",
+        "outputPath": "C:\\Users\\user2023\\Documents\\Me\\Download\\new\\programming\\backend\\f#\\parenthesis\\bin\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
